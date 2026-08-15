@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://YOUR-DOMAIN.example/</loc></url><url><loc>https://YOUR-DOMAIN.example/privacy.html</loc></url><url><loc>https://YOUR-DOMAIN.example/terms.html</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://studyforge.umarabbasi1257.workers.dev/</loc>
+  </url>
+  <url>
+    <loc>https://studyforge.umarabbasi1257.workers.dev/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://studyforge.umarabbasi1257.workers.dev/terms.html</loc>
+  </url>
+</urlset>
