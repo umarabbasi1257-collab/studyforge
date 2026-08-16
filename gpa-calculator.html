@@ -122,7 +122,7 @@ function addCourse(){
 <option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
 <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>F</option>
 </select>
-<input class="credits" type="number" min="0" step="0.5" placeholder="Credits" aria-label="Credit hours">`;
+<input class="credits" type="number" min="0" step="0.5" inputmode="decimal" placeholder="Credits" aria-label="Credit hours" style="color:#171717;background:#fff;opacity:1;-webkit-text-fill-color:#171717;">`;
  wrap.appendChild(row);
 }
 function resetCourses(){document.getElementById("courses").innerHTML="";document.getElementById("result").style.display="none";for(let i=0;i<4;i++)addCourse();}
