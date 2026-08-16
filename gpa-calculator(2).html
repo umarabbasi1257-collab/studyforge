@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPA Calculator — Free & Easy to Use | StudyForge</title>
+<meta name="description" content="Free GPA calculator for calculating semester GPA from course grades and credits. Add your courses, enter grades and credits, and get a clear weighted GPA result.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studyforge.studyforge.workers.dev/gpa-calculator.html">
+<meta property="og:title" content="GPA Calculator — StudyForge">
+<meta property="og:description" content="Calculate your weighted GPA from course grades and credits with StudyForge's free GPA calculator.">
+<meta property="og:url" content="https://studyforge.studyforge.workers.dev/gpa-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StudyForge">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GPA Calculator — StudyForge">
+<meta name="twitter:description" content="Free weighted GPA calculator for courses, grades and credit hours.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"GPA Calculator",
+  "url":"https://studyforge.studyforge.workers.dev/gpa-calculator.html",
+  "description":"Free GPA calculator for calculating weighted GPA from course grades and credits."
+}
+</script>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f7f7f5}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 0 36px}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:#111}.back{color:#555;text-decoration:none}
+.hero{padding:30px 0 20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:#777}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:.98;margin:12px 0 18px;letter-spacing:-.05em}
+h2{font-size:1.7rem;margin-top:42px}p{line-height:1.7;color:#555}
+.card{background:#fff;border:1px solid #e4e4e0;border-radius:22px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.row{display:grid;grid-template-columns:1.5fr 1fr 44px;gap:10px;margin-bottom:10px}
+select,input{width:100%;padding:13px;border:1px solid #ccc;border-radius:12px;font-size:1rem;background:#fff}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{appearance:none;-webkit-appearance:none;margin:0}
+input[type="number"]{-moz-appearance:textfield}
+button{padding:13px 16px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.actions button{flex:1}
+.remove{background:#eee;color:#222}.result{margin-top:18px;padding:18px;border-radius:14px;background:#f1f1ed;display:none}
+.result strong{font-size:1.8rem}.steps{color:#444;line-height:1.7}
+.faq details{background:#fff;border:1px solid #e4e4e0;border-radius:14px;padding:16px 18px;margin:10px 0}.faq summary{font-weight:700;cursor:pointer}
+footer{padding:45px 0;color:#777;font-size:.9rem}
+@media(max-width:700px){.row{grid-template-columns:1fr 1fr 44px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="logo" href="/">StudyForge</a>
+<a class="back" href="/">← All tools</a>
+</header>
+
+<main>
+<section class="hero">
+<span class="eyebrow">Study calculator</span>
+<h1>GPA Calculator</h1>
+<p>Calculate a weighted semester GPA by entering each course, its grade and credit hours. StudyForge uses the standard weighted-GPA formula and shows the calculation clearly.</p>
+</section>
+
+<section class="card" aria-label="GPA calculator">
+<div id="courses"></div>
+<div class="actions">
+<button onclick="addCourse()">+ Add course</button>
+<button onclick="calculateGPA()">Calculate GPA</button>
+<button class="remove" onclick="resetCourses()">Reset</button>
+</div>
+<div id="result" class="result" aria-live="polite"></div>
+</section>
+
+<section>
+<h2>How GPA is calculated</h2>
+<p>A weighted GPA is calculated by multiplying each course's grade-point value by its credit hours, adding those quality points, and dividing by the total credit hours.</p>
+<div class="card steps">GPA = Σ(grade points × credit hours) ÷ Σ(credit hours)
+
+Example:
+Course A: 4.0 grade points × 3 credits = 12 quality points
+Course B: 3.0 grade points × 3 credits = 9 quality points
+
+Total quality points = 21
+Total credits = 6
+
+GPA = 21 ÷ 6 = 3.50</div>
+
+<h2>Grade-point scale used by this calculator</h2>
+<div class="card steps">A / A+ = 4.0
+A− = 3.7
+B+ = 3.3
+B = 3.0
+B− = 2.7
+C+ = 2.3
+C = 2.0
+C− = 1.7
+D+ = 1.3
+D = 1.0
+F = 0.0
+
+Note: GPA scales vary between schools and universities. If your institution uses a different scale, use the grade-point values specified by your institution.</div>
+</section>
+
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<details><summary>What is a weighted GPA?</summary><p>A weighted GPA accounts for the number of credit hours assigned to each course, so courses with more credits have a larger effect on the result.</p></details>
+<details><summary>How many courses can I add?</summary><p>You can add as many course rows as needed for the calculation. Courses with zero or blank credits are ignored.</p></details>
+<details><summary>Is this GPA scale universal?</summary><p>No. Universities and schools can use different grading scales. This calculator uses a common 4.0-style scale and lets you enter the grade-point values that best match your institution.</p></details>
+</section>
+</main>
+
+<footer>© StudyForge · Free online calculators and study tools</footer>
+</div>
+
+<script>
+const scale={A:4,"A-":3.7,"B+":3.3,B:3,"B-":2.7,"C+":2.3,C:2,"C-":1.7,"D+":1.3,D:1,F:0};
+function addCourse(){
+ const wrap=document.getElementById("courses");
+ const row=document.createElement("div");
+ row.className="row";
+ row.innerHTML=`<input class="course" type="text" placeholder="Course name" aria-label="Course name">
+<select class="grade" aria-label="Grade">
+<option value="">Grade</option>
+<option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+<option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>F</option>
+</select>
+<input class="credits" type="text" inputmode="decimal" autocomplete="off" placeholder="Credits" aria-label="Credit hours" style="color:#171717;background:#fff;opacity:1;-webkit-text-fill-color:#171717;">`;
+ wrap.appendChild(row);
+}
+function resetCourses(){document.getElementById("courses").innerHTML="";document.getElementById("result").style.display="none";for(let i=0;i<4;i++)addCourse();}
+function calculateGPA(){
+ let quality=0,credits=0,used=0,lines=[];
+ document.querySelectorAll("#courses .row").forEach((row,i)=>{
+   const grade=row.querySelector(".grade").value;
+   const c=parseFloat(row.querySelector(".credits").value);
+   const name=row.querySelector(".course").value.trim()||`Course ${i+1}`;
+   if(grade && Number.isFinite(c) && c>0){
+     const q=scale[grade]*c; quality+=q; credits+=c; used++;
+     lines.push(`${name}: ${grade} (${scale[grade].toFixed(1)}) × ${c} credits = ${q.toFixed(2)} quality points`);
+   }
+ });
+ const out=document.getElementById("result");
+ if(!used){out.innerHTML="Please enter at least one grade and a positive number of credits.";out.style.display="block";return}
+ const gpa=quality/credits;
+ out.innerHTML=`<strong>${gpa.toFixed(2)}</strong><div class="steps">${lines.join("\n")}<br><br>Total quality points: ${quality.toFixed(2)}<br>Total credits: ${credits}<br><br>GPA = ${quality.toFixed(2)} ÷ ${credits} = ${gpa.toFixed(2)}</div>`;
+ out.style.display="block";
+}
+for(let i=0;i<4;i++)addCourse();
+</script>
+</body>
+</html>
