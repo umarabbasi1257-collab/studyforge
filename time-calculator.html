@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Calculator | StudyForge</title>
+<meta name="description" content="Free time calculator to add durations and convert time into hours and minutes.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://studyforge.studyforge.workers.dev/time-calculator.html">
+<meta property="og:title" content="Time Calculator | StudyForge"><meta property="og:description" content="Free time calculator to add durations and convert time into hours and minutes.">
+<meta property="og:url" content="https://studyforge.studyforge.workers.dev/time-calculator.html"><meta property="og:type" content="website"><meta property="og:site_name" content="StudyForge">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Time Calculator | StudyForge"><meta name="twitter:description" content="Free time calculator to add durations and convert time into hours and minutes.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Time Calculator","url":"https://studyforge.studyforge.workers.dev/time-calculator.html","description":"Free time calculator to add durations and convert time into hours and minutes."}</script>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f7f7f5}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 0 36px}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:#111}.back{color:#555;text-decoration:none}
+.hero{padding:30px 0 20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:#777}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:.98;margin:12px 0 18px;letter-spacing:-.05em}
+h2{font-size:1.7rem;margin-top:42px}p{line-height:1.7;color:#555}
+.card{background:#fff;border:1px solid #e4e4e0;border-radius:22px;padding:24px;box-shadow:0 12px 40px #0000000f}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px}
+input,select{width:100%;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:1rem;background:#fff;color:#171717}
+button{margin-top:18px;width:100%;padding:14px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.result{margin-top:18px;padding:24px;border-radius:16px;background:#f1f1ed;border:2px solid #d8d8d2;display:none}
+.result-title{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#666;margin-bottom:8px}
+.answer{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;line-height:1.25}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.stat{background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px}.stat span{display:block;color:#666;font-size:.82rem;margin-bottom:5px}.stat b{font-size:1.05rem}
+.steps{white-space:pre-line;color:#444;line-height:1.7}
+.faq details{background:#fff;border:1px solid #e4e4e0;border-radius:14px;padding:16px 18px;margin:10px 0}.faq summary{font-weight:700;cursor:pointer}
+.notice{margin-top:14px;padding:14px;border-radius:12px;background:#fff4d6;color:#5d4a16;font-size:.9rem;line-height:1.6}
+footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.summary{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap"><header><a class="logo" href="/">StudyForge</a><a class="back" href="/">← All tools</a></header>
+<main><section class="hero"><span class="eyebrow">Time tool</span><h1>Time Calculator</h1><p>Add two time durations and instantly see the total hours, minutes and decimal hours.</p></section>
+<section class="card">
+<div class="grid">
+<div><label for="h1">First hours</label><input id="h1" type="text" inputmode="decimal" placeholder="e.g. 2"></div>
+<div><label for="m1">First minutes</label><input id="m1" type="text" inputmode="decimal" placeholder="e.g. 30"></div>
+<div><label for="h2">Second hours</label><input id="h2" type="text" inputmode="decimal" placeholder="e.g. 1"></div>
+<div><label for="m2">Second minutes</label><input id="m2" type="text" inputmode="decimal" placeholder="e.g. 45"></div>
+</div>
+<button onclick="calc()">Add Time</button>
+<div id="result" class="result"><div class="result-title">Total time</div><div id="answer" class="answer"></div><div id="details" class="steps" style="margin-top:14px"></div></div>
+</section>
+<section><h2>Time calculation</h2><p>This tool adds two durations and returns the total in hours and minutes, total minutes and decimal hours.</p></section>
+<section class="faq"><h2>Frequently Asked Questions</h2><details><summary>Can I enter minutes greater than 59?</summary><p>Yes. The calculator treats the fields as durations, so extra minutes are automatically carried into hours.</p></details></section>
+</main><footer>© StudyForge · Free online calculators and study tools</footer></div>
+<script>function n(id){const x=parseFloat(document.getElementById(id).value);return Number.isFinite(x)?x:0}
+function calc(){const total=((n("h1")*60+n("m1"))+(n("h2")*60+n("m2")));const r=document.getElementById("result"),a=document.getElementById("answer"),d=document.getElementById("details");r.style.display="block";const h=Math.floor(total/60),m=total%60;a.textContent=h+" hours "+m+" minutes";d.textContent="Total minutes: "+total+"\nDecimal hours: "+(total/60).toFixed(2)}
+document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script></body></html>

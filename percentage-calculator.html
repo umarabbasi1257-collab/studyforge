@@ -1,135 +1,50 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Percentage Calculator — Free, Accurate & Step-by-Step | StudyForge</title>
-<meta name="description" content="Free percentage calculator for finding percentages, percentage increase or decrease, and what percent one number is of another. Includes formulas and step-by-step explanations.">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Percentage Calculator | StudyForge</title>
+<meta name="description" content="Free percentage calculator to find a percentage of a number quickly and accurately.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://studyforge.studyforge.workers.dev/percentage-calculator.html">
-<meta property="og:title" content="Percentage Calculator — StudyForge">
-<meta property="og:description" content="Calculate percentages, percentage change, increases and decreases with clear step-by-step working.">
-<meta property="og:url" content="https://studyforge.studyforge.workers.dev/percentage-calculator.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="StudyForge">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Percentage Calculator — StudyForge">
-<meta name="twitter:description" content="Free percentage calculations with formulas and step-by-step explanations.">
-
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"WebPage",
- "name":"Percentage Calculator",
- "url":"https://studyforge.studyforge.workers.dev/percentage-calculator.html",
- "description":"Free percentage calculator with step-by-step explanations."
-}
-</script>
+<meta property="og:title" content="Percentage Calculator | StudyForge"><meta property="og:description" content="Free percentage calculator to find a percentage of a number quickly and accurately.">
+<meta property="og:url" content="https://studyforge.studyforge.workers.dev/percentage-calculator.html"><meta property="og:type" content="website"><meta property="og:site_name" content="StudyForge">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Percentage Calculator | StudyForge"><meta name="twitter:description" content="Free percentage calculator to find a percentage of a number quickly and accurately.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Percentage Calculator","url":"https://studyforge.studyforge.workers.dev/percentage-calculator.html","description":"Free percentage calculator to find a percentage of a number quickly and accurately."}</script>
 <style>
 :root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f7f7f5}
 *{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}
 header{display:flex;justify-content:space-between;align-items:center;padding:10px 0 36px}
-.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:#111}
-.back{color:#555;text-decoration:none}.hero{padding:30px 0 20px}
-.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:#777}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:#111}.back{color:#555;text-decoration:none}
+.hero{padding:30px 0 20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:#777}
 h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:.98;margin:12px 0 18px;letter-spacing:-.05em}
 h2{font-size:1.7rem;margin-top:42px}p{line-height:1.7;color:#555}
-.card{background:#fff;border:1px solid #e4e4e0;border-radius:22px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,.06)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px}input{width:100%;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:1rem}
-button{margin-top:16px;width:100%;padding:14px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
-.result{margin-top:18px;padding:18px;border-radius:14px;background:#f1f1ed;display:none}
-.result strong{font-size:1.5rem}.steps{white-space:pre-line;color:#444;line-height:1.7}
+.card{background:#fff;border:1px solid #e4e4e0;border-radius:22px;padding:24px;box-shadow:0 12px 40px #0000000f}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px}
+input,select{width:100%;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:1rem;background:#fff;color:#171717}
+button{margin-top:18px;width:100%;padding:14px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.result{margin-top:18px;padding:24px;border-radius:16px;background:#f1f1ed;border:2px solid #d8d8d2;display:none}
+.result-title{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#666;margin-bottom:8px}
+.answer{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;line-height:1.25}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.stat{background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px}.stat span{display:block;color:#666;font-size:.82rem;margin-bottom:5px}.stat b{font-size:1.05rem}
+.steps{white-space:pre-line;color:#444;line-height:1.7}
 .faq details{background:#fff;border:1px solid #e4e4e0;border-radius:14px;padding:16px 18px;margin:10px 0}.faq summary{font-weight:700;cursor:pointer}
-footer{padding:45px 0;color:#777;font-size:.9rem}
-@media(max-width:700px){.grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<div class="wrap">
-<header>
-<a class="logo" href="/">StudyForge</a>
-<a class="back" href="/">← All tools</a>
-</header>
-
-<main>
-<section class="hero">
-<span class="eyebrow">Math calculator</span>
-<h1>Percentage Calculator</h1>
-<p>Calculate a percentage of a number, find what percentage one number is of another, or calculate percentage increase and decrease. StudyForge shows the working so the result is easy to follow.</p>
-</section>
-
-<section class="card" aria-label="Percentage calculator">
+.notice{margin-top:14px;padding:14px;border-radius:12px;background:#fff4d6;color:#5d4a16;font-size:.9rem;line-height:1.6}
+footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.summary{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap"><header><a class="logo" href="/">StudyForge</a><a class="back" href="/">← All tools</a></header>
+<main><section class="hero"><span class="eyebrow">Math calculator</span><h1>Percentage Calculator</h1><p>Find a percentage of any number instantly with a simple, mobile-friendly percentage calculator.</p></section>
+<section class="card">
 <div class="grid">
-<div>
-<label for="percent">Percentage</label>
-<input id="percent" type="number" inputmode="decimal" placeholder="e.g. 15">
+<div><label for="a">Value</label><input id="a" type="text" inputmode="decimal" placeholder="e.g. 250"></div>
+<div><label for="b">Percentage (%)</label><input id="b" type="text" inputmode="decimal" placeholder="e.g. 20"></div>
 </div>
-<div>
-<label for="number">Number</label>
-<input id="number" type="number" inputmode="decimal" placeholder="e.g. 240">
-</div>
-<div>
-<label for="part">Part</label>
-<input id="part" type="number" inputmode="decimal" placeholder="e.g. 36">
-</div>
-</div>
-<button onclick="calculate()">Calculate</button>
-<div id="result" class="result" aria-live="polite"></div>
+<button onclick="calc()">Calculate</button>
+<div id="result" class="result"><div class="result-title">Result</div><div id="answer" class="answer"></div><div id="details" class="steps" style="margin-top:14px"></div></div>
 </section>
-
-<section>
-<h2>How to calculate a percentage</h2>
-<p>To find a percentage of a number, convert the percentage to a decimal and multiply it by the number.</p>
-<div class="card steps">Example: 15% of 240
-
-Step 1: Convert 15% to a decimal:
-15 ÷ 100 = 0.15
-
-Step 2: Multiply by 240:
-0.15 × 240 = 36
-
-Answer: 15% of 240 is 36.</div>
-
-<h2>Percentage formulas</h2>
-<div class="card steps">Percentage of a number:
-(percentage ÷ 100) × number
-
-What percentage is one number of another:
-(part ÷ whole) × 100
-
-Percentage change:
-((new value − original value) ÷ original value) × 100</div>
-</section>
-
-<section class="faq">
-<h2>Frequently Asked Questions</h2>
-<details><summary>How do I calculate a percentage of a number?</summary><p>Divide the percentage by 100 and multiply the result by the number. For example, 20% of 50 is (20 ÷ 100) × 50 = 10.</p></details>
-<details><summary>How do I find what percentage one number is of another?</summary><p>Divide the part by the whole and multiply by 100. For example, 25 out of 200 is (25 ÷ 200) × 100 = 12.5%.</p></details>
-<details><summary>How do I calculate percentage increase or decrease?</summary><p>Subtract the original value from the new value, divide by the original value, then multiply by 100. A positive result is an increase and a negative result is a decrease.</p></details>
-</section>
-</main>
-
-<footer>© StudyForge · Free online calculators and study tools</footer>
-</div>
-
-<script>
-function n(id){return Number(document.getElementById(id).value)}
-function fmt(x){return Number.isFinite(x)?Number(x.toFixed(10)).toLocaleString(undefined,{maximumFractionDigits:10}):"—"}
-function calculate(){
- const p=n("percent"), whole=n("number"), part=n("part"), out=document.getElementById("result");
- let html="";
- if(Number.isFinite(p)&&Number.isFinite(whole)){
-   const ans=p/100*whole;
-   html += `<strong>${fmt(ans)}</strong><div class="steps">${fmt(p)}% of ${fmt(whole)} = (${fmt(p)} ÷ 100) × ${fmt(whole)} = ${fmt(ans)}</div>`;
- }
- if(Number.isFinite(part)&&Number.isFinite(whole)&&whole!==0){
-   const pct=part/whole*100;
-   html += `${html?"<hr>":""}<strong>${fmt(pct)}%</strong><div class="steps">${fmt(part)} ÷ ${fmt(whole)} × 100 = ${fmt(pct)}%</div>`;
- }
- if(!html) html="<div>Please enter a percentage and number, or enter a part and a non-zero whole.</div>";
- out.innerHTML=html;out.style.display="block";
-}
-</script>
-</body>
-</html>
+<section><h2>How percentage calculations work</h2><p>To find a percentage of a value, multiply the value by the percentage and divide by 100.</p><div class="card steps">Percentage of a value = value × percentage ÷ 100</div></section>
+<section class="faq"><h2>Frequently Asked Questions</h2><details><summary>What is 20% of 250?</summary><p>20% of 250 is 50.</p></details><details><summary>How do I calculate a percentage?</summary><p>Convert the percentage to a decimal or multiply the number by the percentage and divide by 100.</p></details></section>
+</main><footer>© StudyForge · Free online calculators and study tools</footer></div>
+<script>function n(id){const x=parseFloat(document.getElementById(id).value);return Number.isFinite(x)?x:null}
+function calc(){const a=n("a"),b=n("b"),r=document.getElementById("result"),ans=document.getElementById("answer"),d=document.getElementById("details");r.style.display="block";if(a===null||b===null){ans.textContent="Enter both values.";d.textContent="";return}const v=a*b/100;ans.textContent=v.toLocaleString(undefined,{maximumFractionDigits:10});d.textContent=b+"% of "+a+" = "+v}
+document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script></body></html>
