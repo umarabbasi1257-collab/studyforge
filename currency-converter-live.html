@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Currency Converter | StudyForge</title>
+<meta name="description" content="Free currency conversion calculator using an exchange rate you provide.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://studyforge.studyforge.workers.dev/currency-converter.html">
+<meta property="og:title" content="Currency Converter | StudyForge"><meta property="og:description" content="Free currency conversion calculator using an exchange rate you provide.">
+<meta property="og:url" content="https://studyforge.studyforge.workers.dev/currency-converter.html"><meta property="og:type" content="website"><meta property="og:site_name" content="StudyForge">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Currency Converter | StudyForge"><meta name="twitter:description" content="Free currency conversion calculator using an exchange rate you provide.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Currency Converter","url":"https://studyforge.studyforge.workers.dev/currency-converter.html","description":"Free currency conversion calculator using an exchange rate you provide."}</script>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f7f7f5}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 0 36px}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:#111}.back{color:#555;text-decoration:none}
+.hero{padding:30px 0 20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:#777}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:.98;margin:12px 0 18px;letter-spacing:-.05em}
+h2{font-size:1.7rem;margin-top:42px}p{line-height:1.7;color:#555}
+.card{background:#fff;border:1px solid #e4e4e0;border-radius:22px;padding:24px;box-shadow:0 12px 40px #0000000f}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px}
+input,select{width:100%;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:1rem;background:#fff;color:#171717}
+button{margin-top:18px;width:100%;padding:14px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.result{margin-top:18px;padding:24px;border-radius:16px;background:#f1f1ed;border:2px solid #d8d8d2;display:none}
+.result-title{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#666;margin-bottom:8px}
+.answer{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;line-height:1.25}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.stat{background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px}.stat span{display:block;color:#666;font-size:.82rem;margin-bottom:5px}.stat b{font-size:1.05rem}
+.steps{white-space:pre-line;color:#444;line-height:1.7}
+.faq details{background:#fff;border:1px solid #e4e4e0;border-radius:14px;padding:16px 18px;margin:10px 0}.faq summary{font-weight:700;cursor:pointer}
+.notice{margin-top:14px;padding:14px;border-radius:12px;background:#fff4d6;color:#5d4a16;font-size:.9rem;line-height:1.6}
+footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.summary{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"StudyForge Currency Converter","url":"https://studyforge.studyforge.workers.dev/currency-converter.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","description":"Currency converter using automatically fetched reference exchange rates."}
+</script>
+</head>
+<body><div class="wrap"><header><a class="logo" href="/">StudyForge</a><a class="back" href="/">← All tools</a></header>
+<main><section class="hero"><span class="eyebrow">Money tool</span><h1>Currency Converter</h1><p>Convert currencies with automatically fetched exchange rates and a transparent calculation.</p></section>
+<section class="card">
+<div class="grid">
+<div><label for="amount">Amount</label><input id="amount" type="text" inputmode="decimal" placeholder="e.g. 100" autocomplete="off"></div>
+<div><label for="from">From currency</label><select id="from" aria-label="From currency"></select></div>
+<div><label for="to">To currency</label><select id="to" aria-label="To currency"></select></div>
+</div>
+<button onclick="calc()">Convert Currency</button>
+<div id="status" class="notice" style="display:none" aria-live="polite"></div>
+<div id="result" class="result" aria-live="polite"><div class="result-title">Converted amount</div><div id="answer" class="answer"></div><div id="details" class="steps" style="margin-top:14px"></div></div>
+<div class="notice">Rates are fetched automatically from the Frankfurter public exchange-rates API. Rates are reference rates and are updated on working days, not live trading quotes.</div>
+</section>
+<section><h2>How to use the currency converter</h2><p>Enter an amount and choose the currencies you want to convert between. The current available reference rate is fetched automatically.</p><div class="card steps">Converted amount = amount × fetched exchange rate</div></section>
+<section class="faq"><h2>Frequently Asked Questions</h2><details><summary>Are the exchange rates live?</summary><p>The calculator fetches the latest available reference rates from Frankfurter. These are updated on working days and should not be treated as real-time trading quotes.</p></details><details><summary>Can I use any currency?</summary><p>Yes. Type the currency codes or labels you want to display.</p></details></section>
+</main><footer>© StudyForge · Free online calculators and study tools</footer></div>
+<script>
+const API_BASE="https://api.frankfurter.dev/v2";
+const currencies=[
+  ["USD","US Dollar"],["EUR","Euro"],["GBP","British Pound"],["PKR","Pakistani Rupee"],
+  ["INR","Indian Rupee"],["AED","UAE Dirham"],["SAR","Saudi Riyal"],["CAD","Canadian Dollar"],
+  ["AUD","Australian Dollar"],["JPY","Japanese Yen"],["CNY","Chinese Yuan"],["CHF","Swiss Franc"],
+  ["TRY","Turkish Lira"],["NZD","New Zealand Dollar"],["SGD","Singapore Dollar"],
+  ["HKD","Hong Kong Dollar"],["SEK","Swedish Krona"],["NOK","Norwegian Krone"],
+  ["DKK","Danish Krone"],["ZAR","South African Rand"],["BRL","Brazilian Real"],
+  ["MXN","Mexican Peso"],["PLN","Polish Zloty"],["THB","Thai Baht"]
+];
+
+const fromEl=document.getElementById("from");
+const toEl=document.getElementById("to");
+const amountEl=document.getElementById("amount");
+const resultEl=document.getElementById("result");
+const answerEl=document.getElementById("answer");
+const detailsEl=document.getElementById("details");
+const statusEl=document.getElementById("status");
+
+function fillCurrencies(){
+  currencies.forEach(([code,name])=>{
+    fromEl.add(new Option(`${code} — ${name}`,code));
+    toEl.add(new Option(`${code} — ${name}`,code));
+  });
+  fromEl.value="USD";
+  toEl.value="PKR";
+}
+
+function setStatus(message,show=true){
+  statusEl.textContent=message;
+  statusEl.style.display=show?"block":"none";
+}
+
+function formatNumber(value){
+  return value.toLocaleString(undefined,{maximumFractionDigits:8});
+}
+
+async function calc(){
+  const amount=parseFloat(amountEl.value);
+  const from=fromEl.value;
+  const to=toEl.value;
+
+  resultEl.style.display="block";
+
+  if(!Number.isFinite(amount)||amount<0){
+    answerEl.textContent="Enter a valid amount.";
+    detailsEl.textContent="";
+    return;
+  }
+
+  if(from===to){
+    answerEl.textContent=formatNumber(amount)+" "+to;
+    detailsEl.textContent=`1 ${from} = 1 ${to}\nNo exchange-rate request was needed.`;
+    setStatus("",false);
+    return;
+  }
+
+  answerEl.textContent="Fetching current rate…";
+  detailsEl.textContent="";
+  setStatus("Fetching the latest available reference rate…",true);
+
+  try{
+    const response=await fetch(`${API_BASE}/rate/${encodeURIComponent(from)}/${encodeURIComponent(to)}`,{
+      headers:{Accept:"application/json"},
+      cache:"no-store"
+    });
+
+    if(!response.ok){
+      let message="The currency rate could not be fetched.";
+      try{
+        const error=await response.json();
+        if(error.message) message=error.message;
+      }catch(_){}
+      throw new Error(message);
+    }
+
+    const data=await response.json();
+    const rate=Number(data.rate);
+
+    if(!Number.isFinite(rate)){
+      throw new Error("The API returned an invalid exchange rate.");
+    }
+
+    const converted=amount*rate;
+
+    answerEl.textContent=formatNumber(converted)+" "+to;
+    detailsEl.textContent=
+      `1 ${from} = ${formatNumber(rate)} ${to}\n`+
+      `${formatNumber(amount)} ${from} × ${formatNumber(rate)} = ${formatNumber(converted)} ${to}\n`+
+      `Rate date: ${data.date||"latest available"}`;
+
+    setStatus("",false);
+  }catch(error){
+    answerEl.textContent="Unable to fetch the exchange rate.";
+    detailsEl.textContent="Please try again in a moment. Your internet connection may also affect the API request.";
+    setStatus(error.message||"Currency API request failed.",true);
+  }
+}
+
+fillCurrencies();
+amountEl.addEventListener("keydown",e=>{if(e.key==="Enter")calc()});
+fromEl.addEventListener("change",()=>{if(amountEl.value.trim())calc()});
+toEl.addEventListener("change",()=>{if(amountEl.value.trim())calc()});
+</script></body></html>
