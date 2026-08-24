@@ -1,9 +1,0 @@
-{
-  "name":"StudyForge — Premium Student Toolkit",
-  "short_name":"StudyForge",
-  "start_url":"/",
-  "display":"standalone",
-  "background_color":"#070a10",
-  "theme_color":"#070a10",
-  "description":"Premium calculators, conversions and step-by-step study tools."
-}
