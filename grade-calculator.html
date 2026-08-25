@@ -46,4 +46,5 @@ footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.
 <script>let count=0;
 function addRow(){count++;const div=document.createElement("div");div.className="grid";div.style.marginBottom="12px";div.innerHTML='<div><label>Subject '+count+' name</label><input class="subject" type="text" placeholder="e.g. Mathematics"></div><div><label>Grade (%)</label><input class="grade" type="text" inputmode="decimal" placeholder="e.g. 85"></div>';document.getElementById("rows").appendChild(div)}
 function calc(){const grades=[...document.querySelectorAll(".grade")].map(x=>parseFloat(x.value)).filter(x=>Number.isFinite(x)&&x>=0&&x<=100);const r=document.getElementById("result"),a=document.getElementById("answer"),d=document.getElementById("details");r.style.display="block";if(!grades.length){a.textContent="Enter at least one valid grade.";d.textContent="";return}const avg=grades.reduce((x,y)=>x+y,0)/grades.length;let letter=avg>=90?"A":avg>=80?"B":avg>=70?"C":avg>=60?"D":"F";a.textContent=avg.toFixed(2)+"% ("+letter+")";d.textContent="Subjects counted: "+grades.length+"\nAverage = total percentage ÷ number of subjects"}
-addRow();addRow();</script></body></html>
+addRow();addRow();</script><script src="pro-access.js"></script>
+</body></html>
