@@ -47,4 +47,5 @@ footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.
 </main><footer>© StudyForge · Free online calculators and study tools</footer></div>
 <script>function n(id){const x=parseFloat(document.getElementById(id).value);return Number.isFinite(x)?x:null}
 function calc(){const a=n("a"),b=n("b"),r=document.getElementById("result"),ans=document.getElementById("answer"),d=document.getElementById("details");r.style.display="block";if(a===null||b===null){ans.textContent="Enter both values.";d.textContent="";return}const v=a*b/100;ans.textContent=v.toLocaleString(undefined,{maximumFractionDigits:10});d.textContent=b+"% of "+a+" = "+v}
-document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script></body></html>
+document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script><script src="pro-access.js"></script>
+</body></html>
