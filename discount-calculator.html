@@ -1,53 +1,68 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Discount Calculator — Calculate Sale Price & Savings | StudyForge</title>
-<meta name="description" content="Free online discount calculator to calculate sale price, discount amount and total savings quickly and accurately.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://studyforge.studyforge.workers.dev/discount-calculator.html">
-<meta property="og:title" content="Discount Calculator | StudyForge"><meta property="og:description" content="Free discount calculator to calculate sale prices, discount amounts and savings.">
-<meta property="og:url" content="https://studyforge.studyforge.workers.dev/discount-calculator.html"><meta property="og:type" content="website"><meta property="og:site_name" content="StudyForge">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Discount Calculator | StudyForge"><meta name="twitter:description" content="Free discount calculator to calculate sale prices, discount amounts and savings.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Discount Calculator","url":"https://studyforge.studyforge.workers.dev/discount-calculator.html","description":"Free discount calculator to calculate sale prices, discount amounts and savings."}</script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMI Calculator — Free Loan Payment Calculator | StudyForge</title>
+<meta name="description" content="Free EMI calculator for estimating monthly loan payments, total interest and total repayment.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://studyforge.studyforge.workers.dev/emi-calculator.html">
+<meta property="og:title" content="EMI Calculator — StudyForge">
+<meta property="og:description" content="Calculate monthly EMI, total interest and total repayment for a loan.">
+<meta property="og:url" content="https://studyforge.studyforge.workers.dev/emi-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StudyForge">
+<meta name="twitter:card" content="summary">
 <style>
-:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f7f7f5}
-*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}
-header{display:flex;justify-content:space-between;align-items:center;padding:10px 0 36px}
-.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:#111}.back{color:#555;text-decoration:none}
-.hero{padding:30px 0 20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:#777}
-h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:.98;margin:12px 0 18px;letter-spacing:-.05em}
-h2{font-size:1.7rem;margin-top:42px}p{line-height:1.7;color:#555}
-.card{background:#fff;border:1px solid #e4e4e0;border-radius:22px;padding:24px;box-shadow:0 12px 40px #0000000f}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px}
-input,select{width:100%;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:1rem;background:#fff;color:#171717}
-button{margin-top:18px;width:100%;padding:14px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
-.result{margin-top:18px;padding:24px;border-radius:16px;background:#f1f1ed;border:2px solid #d8d8d2;display:none}
-.result-title{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#666;margin-bottom:8px}
-.answer{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;line-height:1.25}
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.stat{background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px}.stat span{display:block;color:#666;font-size:.82rem;margin-bottom:5px}.stat b{font-size:1.05rem}
-.steps{white-space:pre-line;color:#444;line-height:1.7}
-.faq details{background:#fff;border:1px solid #e4e4e0;border-radius:14px;padding:16px 18px;margin:10px 0}.faq summary{font-weight:700;cursor:pointer}
-.notice{margin-top:14px;padding:14px;border-radius:12px;background:#fff4d6;color:#5d4a16;font-size:.9rem;line-height:1.6}
-footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.summary{grid-template-columns:1fr}}
-</style></head>
-<body><div class="wrap"><header><a class="logo" href="/">StudyForge</a><a class="back" href="/">← All tools</a></header>
-<main><section class="hero"><span class="eyebrow">Shopping math</span><h1>Discount Calculator</h1><p>Calculate the final price after a discount and see exactly how much you save.</p></section>
-<section class="card">
-<div class="grid">
-<div><label for="price">Original price</label><input id="price" type="text" inputmode="decimal" placeholder="e.g. 1000"></div>
-<div><label for="discount">Discount (%)</label><input id="discount" type="text" inputmode="decimal" placeholder="e.g. 25"></div>
-</div>
-<button onclick="calc()">Calculate Discount</button>
-<div id="result" class="result"><div class="result-title">Final price</div><div id="answer" class="answer"></div><div id="details" class="steps" style="margin-top:14px"></div></div>
-</section>
-<section><h2>Discount formula</h2><div class="card steps">Discount amount = original price × discount ÷ 100
-Final price = original price − discount amount</div></section>
-<section class="faq"><h2>Frequently Asked Questions</h2><details><summary>How do I calculate a sale price?</summary><p>Multiply the original price by the discount percentage to find the amount saved, then subtract that amount from the original price.</p></details><details><summary>Can the discount be 100%?</summary><p>Yes. A 100% discount produces a final price of zero.</p></details></section>
-</main><footer>© StudyForge · Free online calculators and study tools</footer></div>
-<script>function n(id){const x=parseFloat(document.getElementById(id).value);return Number.isFinite(x)?x:null}
-function money(x){return x.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
-function calc(){const p=n("price"),d=n("discount"),r=document.getElementById("result"),a=document.getElementById("answer"),out=document.getElementById("details");r.style.display="block";if(p===null||d===null||p<0||d<0||d>100){a.textContent="Enter a valid price and discount from 0% to 100%.";out.textContent="";return}const saved=p*d/100,final=p-saved;a.textContent=money(final);out.textContent="You save "+money(saved)+" on an original price of "+money(p)+". Effective price after "+d+"% discount: "+money(final)}
-document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script><script src="pro-access.js"></script>
+:root{font-family:Inter,system-ui,sans-serif;color:#171717;background:#f7f7f5}*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;padding:10px 0 36px}.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:#111}.back{color:#555;text-decoration:none}.hero{padding:30px 0 20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:#777}h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:.98;margin:12px 0 18px;letter-spacing:-.05em}h2{font-size:1.7rem;margin-top:42px}p{line-height:1.7;color:#555}.card{background:#fff;border:1px solid #e4e4e0;border-radius:22px;padding:24px;box-shadow:0 12px 40px #0000000f}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px}input{width:100%;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:1rem;background:#fff;color:#171717}button{margin-top:18px;width:100%;padding:14px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}.result{margin-top:18px;padding:20px;border-radius:14px;background:#f1f1ed;display:none}.result strong{font-size:1.8rem}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.stat{background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px}.stat span{display:block;color:#666;font-size:.82rem;margin-bottom:5px}.stat b{font-size:1.1rem}.steps{white-space:pre-line;color:#444;line-height:1.7}.faq details{background:#fff;border:1px solid #e4e4e0;border-radius:14px;padding:16px 18px;margin:10px 0}.faq summary{font-weight:700;cursor:pointer}.notice{margin-top:14px;padding:14px;border-radius:12px;background:#fff4d6;color:#5d4a16;font-size:.9rem;line-height:1.6}footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.summary{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"EMI Calculator","url":"https://studyforge.studyforge.workers.dev/emi-calculator.html","description":"Free EMI calculator for estimating monthly loan payments, total interest and total repayment."}</script>
+</head>
+<body><div class="wrap">
+<header><a class="logo" href="/">StudyForge</a><a class="back" href="/">← All tools</a></header>
+<main>
+<section class="hero"><span class="eyebrow">Loan calculator</span><h1>EMI Calculator</h1><p>Estimate your monthly loan payment, total interest and total repayment. Enter the loan amount, annual interest rate and loan tenure to calculate your EMI instantly.</p></section>
+<section class="card" aria-label="EMI calculator"><div class="grid">
+<div><label for="principal">Loan amount</label><input id="principal" type="text" inputmode="decimal" placeholder="e.g. 500000"></div>
+<div><label for="rate">Annual interest rate (%)</label><input id="rate" type="text" inputmode="decimal" placeholder="e.g. 10"></div>
+<div><label for="years">Loan tenure (years)</label><input id="years" type="text" inputmode="decimal" placeholder="e.g. 5"></div>
+<div><label for="currency">Currency symbol</label><input id="currency" type="text" maxlength="5" value="$" placeholder="$"></div>
+</div><button onclick="calculateEMI()">Calculate EMI</button><div id="result" class="result" aria-live="polite"></div></section>
+<section><h2>What is EMI?</h2><p>EMI stands for <strong>Equated Monthly Instalment</strong>. It is the regular amount paid each month toward a loan and normally includes both principal and interest.</p>
+<h2>EMI formula</h2><div class="card steps">EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1)
+
+P = principal loan amount
+r = monthly interest rate as a decimal
+n = total number of monthly payments
+
+Monthly rate = annual interest rate ÷ 12 ÷ 100
+Total repayment = EMI × number of payments
+Total interest = total repayment − principal</div>
+<h2>Example</h2><div class="card steps">Suppose you borrow $500,000 at 10% annual interest for 5 years.
+
+Loan amount = $500,000
+Annual rate = 10%
+Tenure = 5 × 12 = 60 monthly payments
+
+The calculator determines the monthly EMI, total repayment and estimated total interest.</div>
+<div class="notice">This calculator provides an estimate. Actual payments can differ because of lender-specific rates, fees, taxes, insurance, rounding, changing rates or other loan terms.</div></section>
+<section class="faq"><h2>Frequently Asked Questions</h2>
+<details><summary>How is EMI calculated?</summary><p>EMI uses the loan principal, monthly interest rate and total number of monthly payments.</p></details>
+<details><summary>Does a higher interest rate increase EMI?</summary><p>Yes. With the same loan amount and tenure, a higher rate generally increases monthly EMI and total interest.</p></details>
+<details><summary>Does a longer tenure reduce EMI?</summary><p>Usually yes, but a longer tenure can increase total interest paid over the life of the loan.</p></details>
+<details><summary>Can I use this for a home, car or personal loan?</summary><p>Yes. It can estimate payments for many fixed-rate installment loans.</p></details>
+</section></main><footer>© StudyForge · Free online calculators and study tools</footer></div>
+<script>
+function n(id){const x=parseFloat(document.getElementById(id).value);return Number.isFinite(x)?x:null}
+function money(x,s){return s+x.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function calculateEMI(){
+ const P=n("principal"),rate=n("rate"),years=n("years"),s=document.getElementById("currency").value.trim()||"$",out=document.getElementById("result");
+ if(P===null||rate===null||years===null||P<=0||rate<0||years<=0){out.innerHTML="Please enter a valid loan amount, interest rate and tenure.";out.style.display="block";return}
+ const months=Math.round(years*12),r=rate/12/100;
+ const emi=r===0?P/months:P*r*Math.pow(1+r,months)/(Math.pow(1+r,months)-1);
+ const total=emi*months,interest=total-P;
+ out.innerHTML="<strong>"+money(emi,s)+" / month</strong><div class='summary'><div class='stat'><span>Loan amount</span><b>"+money(P,s)+"</b></div><div class='stat'><span>Total interest</span><b>"+money(interest,s)+"</b></div><div class='stat'><span>Total repayment</span><b>"+money(total,s)+"</b></div></div><div class='steps' style='margin-top:18px'>Monthly rate = "+rate+"% ÷ 12 = "+(rate/12).toFixed(6)+"%\n\nNumber of payments = "+months+"\n\nMonthly EMI = "+money(emi,s)+"\n\nTotal repayment = "+money(total,s)+"\nTotal interest = "+money(interest,s)+"</div>";
+ out.style.display="block";
+}
+</script><script src="pro-access.js"></script>
 </body></html>
