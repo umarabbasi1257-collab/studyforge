@@ -49,4 +49,5 @@ footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.
 </main><footer>© StudyForge · Free online calculators and study tools</footer></div>
 <script>function n(id){const x=parseFloat(document.getElementById(id).value);return Number.isFinite(x)?x:0}
 function calc(){const total=((n("h1")*60+n("m1"))+(n("h2")*60+n("m2")));const r=document.getElementById("result"),a=document.getElementById("answer"),d=document.getElementById("details");r.style.display="block";const h=Math.floor(total/60),m=total%60;a.textContent=h+" hours "+m+" minutes";d.textContent="Total minutes: "+total+"\nDecimal hours: "+(total/60).toFixed(2)}
-document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script></body></html>
+document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script><script src="pro-access.js"></script>
+</body></html>
