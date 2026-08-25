@@ -3,35 +3,52 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="StudyForge Pro subscription plans. Compare the free StudyForge toolkit with the planned premium study experience.">
+<meta name="description" content="StudyForge Pro subscription plans. Premium educational tools and study utilities for $4.99 per month.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://studyforge.studyforge.workers.dev/pricing.html">
 <meta property="og:title" content="StudyForge Pro — Premium Study Tools">
-<meta property="og:description" content="Compare StudyForge Free and Pro plans and explore the premium features planned for the platform.">
+<meta property="og:description" content="StudyForge Pro provides premium educational tools and enhanced study utilities.">
 <meta property="og:url" content="https://studyforge.studyforge.workers.dev/pricing.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="StudyForge">
 <title>StudyForge Pro — Premium Study Tools</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 </head>
 <body>
-<header class="nav"><a class="logo" href="index.html"><span>✦</span> StudyForge</a><nav><a href="index.html#tools">Tools</a><a href="index.html#full-tools">Full Tools</a><a href="index.html#categories">Categories</a><a href="pricing.html">Premium</a><a href="index.html#about">About</a></nav><a class="header-calc" href="index.html">Home</a></header>
+<header class="nav">
+<a class="logo" href="index.html"><span>✦</span> StudyForge</a>
+<nav><a href="index.html#tools">Tools</a><a href="index.html#full-tools">Full Tools</a><a href="index.html#categories">Categories</a><a href="pricing.html">Premium</a><a href="index.html#about">About</a></nav>
+<a class="header-calc" href="index.html">Home</a>
+</header>
 <main>
 <section class="hero" style="min-height:480px">
 <div class="badge">✦ STUDYFORGE PRO</div>
 <h1>Premium tools for a<br><em>better study workflow</em></h1>
-<p>StudyForge keeps its core calculators free while preparing an optional premium tier for advanced tools and enhanced study utilities.</p>
-<div class="hero-actions"><a class="primary" href="index.html#premium">View plans <span>→</span></a><a class="secondary" href="index.html">Back to StudyForge</a></div>
+<p>Keep the core StudyForge toolkit free while unlocking premium dedicated tools with StudyForge Pro.</p>
+<div class="hero-actions"><a class="primary" href="#plans">View plan <span>→</span></a><a class="secondary" href="index.html">Back to StudyForge</a></div>
 </section>
-<section class="section pricing-section">
+<section id="plans" class="section pricing-section">
 <div class="pricing-grid">
-<article class="price-card"><span class="tag">FREE</span><h3>Free</h3><div class="price">$0 <small>forever</small></div><p>Use the core StudyForge calculator and study toolkit without a subscription.</p><ul><li>Core calculators</li><li>Converters and study utilities</li><li>Supported step-by-step solutions</li><li>No account required for core tools</li></ul><a class="secondary price-btn" href="index.html#tools">Use Free Tools →</a></article>
-<article class="price-card featured"><span class="tag">PREMIUM</span><h3>StudyForge Pro</h3><div class="price">$4.99 <small>/ month</small></div><p>A premium tier for selected advanced calculators and enhanced study utilities.</p><ul><li>Everything in Free</li><li>Selected premium calculators and tools</li><li>Enhanced study utilities</li><li>Priority feature development</li></ul><a class="primary price-btn" href="product.html">Subscribe to Pro →</a></article>
+<article class="price-card">
+<span class="tag">FREE</span><h3>Free</h3><div class="price">$0 <small>forever</small></div>
+<p>Use the core StudyForge toolkit without a subscription.</p>
+<ul><li>Core calculators</li><li>Study utilities</li><li>Converters</li><li>No subscription required</li></ul>
+<a class="secondary price-btn" href="index.html#tools">Use Free Tools →</a>
+</article>
+<article class="price-card featured">
+<span class="tag">PREMIUM</span><h3>StudyForge Pro</h3><div class="price">$4.99 <small>/ month</small></div>
+<p>Unlock the dedicated Full Tools collection and future premium educational features.</p>
+<ul><li>Premium dedicated tools</li><li>Advanced calculators</li><li>Enhanced study utilities</li><li>Monthly recurring access</li></ul>
+<button class="primary price-btn" type="button" onclick="openStudyForgeProCheckout()">Subscribe to Pro →</button>
+</article>
 </div>
-<p class="pricing-note"><b>Important:</b> Premium access is activated only after a successful payment and secure subscription verification are connected to StudyForge.</p>
+<p class="pricing-note"><b>Billing:</b> StudyForge Pro is a recurring monthly subscription. Cancelling prevents future renewals. Refunds are handled according to the StudyForge Refund Policy.</p>
+<p><a href="product.html">View StudyForge Pro product details →</a></p>
+<p><a href="refund-policy.html">Read the Refund Policy →</a></p>
 </section>
-<p><a href="subscription-policy.html">Read the Subscription &amp; Refund Policy →</a></p>
 </main>
-<footer><span>✦ StudyForge</span><span>© 2026 StudyForge · Built for learning</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span></footer>
-<script src="pro-access.js"></script>
-</body></html>
+<footer><span>✦ StudyForge</span><span>© 2026 StudyForge · Built for learning</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refund-policy.html">Refund Policy</a></span></footer>
+<script src="paddle-checkout.js"></script>
+</body>
+</html>
