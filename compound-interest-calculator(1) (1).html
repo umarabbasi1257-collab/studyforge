@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compound Interest Calculator — Free & Step-by-Step | StudyForge</title>
+<meta name="description" content="Free compound interest calculator. Calculate final balance, total interest, and growth with regular contributions and clear step-by-step calculations.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://studyforge.studyforge.workers.dev/compound-interest-calculator.html">
+<meta property="og:title" content="Compound Interest Calculator — StudyForge">
+<meta property="og:description" content="Calculate compound growth, final balance and total interest with optional regular contributions.">
+<meta property="og:url" content="https://studyforge.studyforge.workers.dev/compound-interest-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StudyForge">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Compound Interest Calculator — StudyForge">
+<meta name="twitter:description" content="Free compound interest calculator with step-by-step results.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Compound Interest Calculator","url":"https://studyforge.studyforge.workers.dev/compound-interest-calculator.html","description":"Free compound interest calculator with optional regular contributions and step-by-step calculations."}
+</script>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f7f7f5}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 0 36px}.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:#111}.back{color:#555;text-decoration:none}
+.hero{padding:30px 0 20px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:#777}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:.98;margin:12px 0 18px;letter-spacing:-.05em}h2{font-size:1.7rem;margin-top:42px}
+p{line-height:1.7;color:#555}.card{background:#fff;border:1px solid #e4e4e0;border-radius:22px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px}
+input,select{width:100%;padding:14px;border:1px solid #ccc;border-radius:12px;font-size:1rem;background:#fff;color:#171717}
+button{margin-top:18px;width:100%;padding:14px;border:0;border-radius:12px;background:#111;color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.result{margin-top:18px;padding:20px;border-radius:14px;background:#f1f1ed;display:none}.result strong{font-size:1.7rem}
+.steps{white-space:pre-line;color:#444;line-height:1.7}.faq details{background:#fff;border:1px solid #e4e4e0;border-radius:14px;padding:16px 18px;margin:10px 0}.faq summary{font-weight:700;cursor:pointer}
+footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-premium="true">
+<div class="wrap">
+<header><a class="logo" href="/">StudyForge</a><a class="back" href="/">← All tools</a></header>
+<main>
+<section class="hero">
+<span class="eyebrow">Finance calculator</span>
+<h1>Compound Interest Calculator</h1>
+<p>Calculate how money can grow through compound interest. Enter your starting balance, interest rate, time and compounding frequency, with optional regular contributions.</p>
+</section>
+
+<section class="card" aria-label="Compound interest calculator">
+<div class="grid">
+<div><label for="principal">Initial amount</label><input id="principal" type="text" inputmode="decimal" placeholder="e.g. 1000"></div>
+<div><label for="rate">Annual interest rate (%)</label><input id="rate" type="text" inputmode="decimal" placeholder="e.g. 7"></div>
+<div><label for="years">Time (years)</label><input id="years" type="text" inputmode="decimal" placeholder="e.g. 10"></div>
+<div><label for="frequency">Compounding frequency</label><select id="frequency"><option value="1">Annually</option><option value="2">Semi-annually</option><option value="4">Quarterly</option><option value="12" selected>Monthly</option><option value="365">Daily</option></select></div>
+<div><label for="contribution">Regular contribution</label><input id="contribution" type="text" inputmode="decimal" placeholder="e.g. 100"></div>
+<div><label for="contributionFreq">Contribution frequency</label><select id="contributionFreq"><option value="12" selected>Monthly</option><option value="1">Annually</option><option value="4">Quarterly</option><option value="26">Biweekly</option><option value="52">Weekly</option></select></div>
+</div>
+<button onclick="calculate()">Calculate Compound Interest</button>
+<div id="result" class="result" aria-live="polite"></div>
+</section>
+
+<section>
+<h2>Compound interest formula</h2>
+<p>For an initial amount without additional contributions, the standard compound-interest formula is:</p>
+<div class="card steps">A = P(1 + r/n)^(nt)
+
+P = initial amount
+r = annual interest rate as a decimal
+n = number of compounding periods per year
+t = time in years
+A = final amount
+
+Interest earned = A − P</div>
+
+<h2>Example</h2>
+<div class="card steps">Suppose you invest $1,000 at 7% annual interest, compounded monthly, for 10 years.
+
+P = 1,000
+r = 0.07
+n = 12
+t = 10
+
+A = 1,000 × (1 + 0.07/12)^(12 × 10)
+
+The calculator evaluates the formula and reports the final balance and interest earned.</div>
+
+<h2>Important note about regular contributions</h2>
+<p>When regular contributions are included, the calculator compounds the starting balance and then applies each contribution at the end of its selected contribution period. Actual financial products can use different contribution timing, fees, taxes, or compounding rules, so use your account's terms for exact projections.</p>
+</section>
+
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<details><summary>What is compound interest?</summary><p>Compound interest means interest is added to the balance and can itself earn interest in later periods.</p></details>
+<details><summary>Does compounding frequency matter?</summary><p>Yes. With the same nominal annual rate and other conditions, more frequent compounding generally changes the final balance because interest is credited more often.</p></details>
+<details><summary>Can I include monthly contributions?</summary><p>Yes. Enter a regular contribution and choose its frequency. The calculator includes those contributions in the projected balance.</p></details>
+</section>
+</main>
+<footer>© StudyForge · Free online calculators and study tools</footer>
+</div>
+
+<script>
+function num(id){const v=parseFloat(document.getElementById(id).value);return Number.isFinite(v)?v:null}
+function money(x){return x.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function calculate(){
+ const P=num("principal"), annualRate=num("rate"), years=num("years");
+ const n=Number(document.getElementById("frequency").value);
+ const contribution=num("contribution")??0;
+ const cf=Number(document.getElementById("contributionFreq").value);
+ const out=document.getElementById("result");
+ if(P===null||annualRate===null||years===null||P<0||years<0||contribution<0){
+   out.innerHTML="Please enter valid non-negative values for the initial amount, interest rate, time and contribution.";
+   out.style.display="block";return;
+ }
+ const r=annualRate/100;
+ const base=(r===0)?P:P*Math.pow(1+r/n,n*years);
+ let futureContribution=0;
+ if(contribution>0&&years>0){
+   const periods=Math.floor(years*cf+1e-9);
+   const ratePerPeriod=r/cf;
+   futureContribution=ratePerPeriod===0?contribution*periods:contribution*((Math.pow(1+ratePerPeriod,periods)-1)/ratePerPeriod);
+ }
+ const finalBalance=base+futureContribution;
+ const totalContributions=P+contribution*Math.floor(years*cf+1e-9);
+ const interest=finalBalance-totalContributions;
+ out.innerHTML=`<strong>${money(finalBalance)}</strong><div class="steps">Initial amount: ${money(P)}
+Interest rate: ${annualRate}%
+Time: ${years} years
+Compounding: ${n} time(s) per year
+Regular contribution: ${money(contribution)}
+
+Final balance: ${money(finalBalance)}
+Total money contributed: ${money(totalContributions)}
+Estimated interest earned: ${money(interest)}
+
+Without regular contributions:
+${money(base)}
+
+The contribution projection assumes each contribution is made at the end of its selected contribution period.</div>`;
+ out.style.display="block";
+}
+</script>
+<script src="pro-access.js"></script>
+</body>
+</html>
