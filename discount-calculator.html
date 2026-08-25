@@ -49,4 +49,5 @@ Final price = original price − discount amount</div></section>
 <script>function n(id){const x=parseFloat(document.getElementById(id).value);return Number.isFinite(x)?x:null}
 function money(x){return x.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
 function calc(){const p=n("price"),d=n("discount"),r=document.getElementById("result"),a=document.getElementById("answer"),out=document.getElementById("details");r.style.display="block";if(p===null||d===null||p<0||d<0||d>100){a.textContent="Enter a valid price and discount from 0% to 100%.";out.textContent="";return}const saved=p*d/100,final=p-saved;a.textContent=money(final);out.textContent="You save "+money(saved)+" on an original price of "+money(p)+". Effective price after "+d+"% discount: "+money(final)}
-document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script></body></html>
+document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script><script src="pro-access.js"></script>
+</body></html>
