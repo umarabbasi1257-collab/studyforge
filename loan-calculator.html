@@ -50,4 +50,5 @@ footer{padding:45px 0;color:#777;font-size:.9rem}@media(max-width:650px){.grid,.
 <script>function n(id){const x=parseFloat(document.getElementById(id).value);return Number.isFinite(x)?x:null}
 function money(x,s){return s+x.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
 function calc(){const P=n("principal"),rate=n("rate"),years=n("years"),s=document.getElementById("currency").value.trim()||"$",r=document.getElementById("result"),a=document.getElementById("answer"),d=document.getElementById("details");r.style.display="block";if(P===null||rate===null||years===null||P<=0||rate<0||years<=0){a.textContent="Enter valid loan details.";d.textContent="";return}const months=Math.round(years*12),m=rate/12/100,emi=m===0?P/months:P*m*Math.pow(1+m,months)/(Math.pow(1+m,months)-1),total=emi*months,interest=total-P;a.textContent=money(emi,s)+" / month";d.textContent="Payments: "+months+"\nTotal repayment: "+money(total,s)+"\nTotal interest: "+money(interest,s)}
-document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script></body></html>
+document.querySelectorAll("input").forEach(x=>x.addEventListener("keydown",e=>{if(e.key==="Enter")calc()}))</script><script src="pro-access.js"></script>
+</body></html>
